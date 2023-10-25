@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      margin: 20px 20px;
+      flex-wrap: wrap;
+    }
+     fieldset{
+      background-color: white;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      max-width: fit-content;
+     }
+    button{
+      background-color: rgb(68, 65, 65);
+      color: #fff;
+      margin-right: 6px;
+     padding: 10px;
+      border: none;
+     padding: 15px;
+      font-size: 24px;
+      margin-right: 10px;
+    border-radius: 100px;
+    }
+    .title{
+      display: flex;
+      margin-bottom: 10px;
+      
+    }
+    .is-div{
+      background-color: orange;
+      margin-bottom: 10px;
+
+    }
+    .talk-div{
+      display: flex;
+    }
+    .js-calculator{
+      margin:20px;
+      color: #333;
+      font-size: 30px;
+    }
+    .antman{
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <fieldset>
+  <p class="js-calculator"></p>
+  <div class="title">
+ <div> <button onclick="
+  updateCalculator(1);
+    ">1</button></div>
+
+<div> <button onclick="
+  updateCalculator(2);
+  ">2</button></div>
+
+<div> <button onclick="
+  updateCalculator(3);
+  ">3</button></div>
+
+<div> <button onclick="
+  updateCalculator('+');
+  " class="is-div">+</button></div>
+</div>
+<div class="talk-div">
+<div><button onclick="
+  updateCalculator(4);
+  ">4</button></div>
+
+
+<div> <button onclick="
+  updateCalculator(5);
+  ">5</button></div>
+
+<div> <button onclick="
+  updateCalculator(6);
+  ">6</button></div>
+
+<div> <button onclick="
+  updateCalculator('-');
+  "class="is-div">-</button></div>
+</div>
+
+<div class="title">
+
+<div> <button onclick="
+  updateCalculator(7);
+  ">7</button></div>
+
+<div> <button onclick="
+  updateCalculator(8);
+  ">8</button></div>
+
+<div> <button onclick="
+  updateCalculator(9);
+  ">9</button></div>
+
+<div> <button onclick="
+  updateCalculator('*');
+  " class="is-div">*</button></div>
+</div>
+
+<div class="talk-div">
+
+<div> <button onclick="
+  updateCalculator(0);
+  ">0</button></div>
+
+<div> <button onclick="
+  updateCalculator('.');
+  ">.</button></div>
+
+
+<div> <button onclick="
+  updateCalculator('/');
+  " class="is-div">/</button></div>
+
+ <div> <button onclick ="
+  updateCalculator('=');
+  " class="is-div">=</button></div>
+</div>
+
+<button onclick="
+updateCalculator('Clear');
+" class="">Clear</button>
+</fieldset>
+
+<a href="10.html"><button class="antman">Amazon cart calculator</button></a>
+  <script>
+    let calculation = JSON.parse(localStorage.getItem('calculator')) || {
+      calculation: 0,
+    };
+
+
+function updateCalculator(CalculatorMove){
+        
+      if(CalculatorMove === 1){
+        calculation += 1;
+          console.log(calculation);
+      }else if (CalculatorMove === 2) {
+        calculation += 2;
+        console.log(calculation);
+      }else if(CalculatorMove === 3){
+        calculation += 3;
+        console.log(calculation);
+      }else if(CalculatorMove === 4){
+        calculation +=  4;
+        console.log(calculation);
+      }else if(CalculatorMove === 5){
+        calculation += 5 ;
+        console.log(calculation);
+      }else if(CalculatorMove === 6){
+        calculation +=  6;
+        console.log(calculation);
+      }else if(CalculatorMove === 7){
+        calculation += 7;
+        console.log(calculation);
+      }else if(CalculatorMove === 8){
+        calculation +=  8;
+        console.log(calculation);
+      }else if(CalculatorMove === 9){
+        calculation +=  9;
+        console.log(calculation);
+      }else if(CalculatorMove === 0 ){
+        calculation += 0;
+        console.log(calculation);
+      }else if(CalculatorMove === '*'){
+        calculation += ' * ';
+        console.log(calculation);
+      }else if(CalculatorMove === '-'){
+        calculation += ' - ';
+        console.log(calculation);
+      }else if(CalculatorMove === '/'){
+        calculation += ' / ';
+        console.log(calculation);
+      }else if(CalculatorMove === '+'){
+        calculation += ' + ';
+        console.log(calculation);
+      }else if(CalculatorMove === '.'){
+        calculation += ' .';
+        console.log(calculation);
+      } else if (CalculatorMove === 'Clear'){
+        calculation = '';
+      }else if(CalculatorMove === '='){
+        eval(calculation);
+        console.log(calculation  = eval(calculation));
+      }
+
+
+    localStorage.setItem('calculator', JSON.stringify(calculation));
+
+    const paragraph = document.querySelector('.js-calculator').innerHTML = `${calculation}`;
+};
+
+
+ //let calculation = '';
+
+
+
+
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>  News homepage</title>
+
+  <style>
+  css var
+/*// COLOR STYLES*/
+var{
+    --COLOR:rebeccapurple;
+    --BGCOLOR: beige;
+}-
+
+/*GENERAL STYLES*/
+
+var{
+    --PADDINGLEFT:7rem;
+--PADDINGTOP:0.5rem
+--MARGINGTOP:2rem;
+}
+
+
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1rem;
+  margin: 0; 
+display: flex;
+align-items: center;  
+justify-content: center;
+flex-wrap: wrap;
+}
+.center{/* 
+    margin-left: 8rem;
+    margin-right: 3rem; */
+    background-color:beige;
+    border: none;
+}
+svg{
+   margin-left:12rem;
+    padding-top: 1.5rem;
+}
+a{
+    margin-bottom: 2rem;
+    text-decoration: none;
+display: inline-block;
+    margin-inline: 1rem;
+}
+
+ ul{
+    padding-left: 0;
+    list-style: none;
+    color:rebeccapurple;
+    box-sizing: border-box;
+}
+  
+
+
+.imgfield{
+min-width: 100px;    
+min-height: 100px;
+ display:grid;
+ grid-template-columns: 2fr 2fr 2fr ;
+grid-template-rows: minmax(150px,auto);
+row-gap: 1em;
+grid-row: 2;
+margin-left: 8rem;
+margin-bottom: 0;
+flex-wrap: wrap; 
+} 
+
+.come{
+    border: none;
+    display:flex;
+}
+
+.container{ 
+    font-size: 15px;
+    margin: 1rem;
+    margin-left: 4rem;
+    color: grey;
+}
+
+.atom{
+    padding-top: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+font-weight: 700;
+font-size:  50px; ;
+max-width: fit-content;
+object-position:left;
+margin-bottom: 4rem;
+}
+
+button{ 
+    background-color: tomato;
+    height: 3rem;
+    width: 9rem;
+    border: none;
+    color:whitesmoke;
+    padding-top: 0;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    transition: 0.9s;
+}
+button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    background-color: rgb(58, 152, 234);
+    color: rgb(39, 28, 17);
+}
+button:active{
+    opacity: 0.4;
+}
+
+.columns{
+    padding-top: 0;
+    display: inline-flex;
+   margin-bottom: 4rem;
+   column-gap: normal;
+   margin-left: 7rem;
+}
+
+.antman{
+    display: inline-block;
+    max-width: fit-content;
+    align-content: flex-ends;
+}
+
+
+.field{  
+
+    display:inline-flex;
+    column-gap: 2rem;
+    object-fit: contain;
+    border: none;
+    padding-top: 0;
+    margin-bottom: 15rem;
+    max-width: fit-content;
+    cursor: pointer;
+    
+}
+
+span{
+    max-width: fit-content;
+    color: gray;
+    margin: 0;
+    font-size:large;
+    text-decoration: justify;
+    font-size: 1.2rem;
+    
+}
+.strong{
+    font-size: small;
+}
+
+.h2{
+    font-size: x-large;
+    display: block;
+    color: gray;
+    margin-bottom: 0;
+}
+
+.h3{
+    color: #000;
+    font-size: 15px;
+    margin-bottom: 2rem;
+}
+
+
+.new{
+    color: rgb(228, 190, 118);
+}
+.H2{
+    font-size: bolder;
+    font-style: oblique;
+}
+.h6{
+    font-size:smaller;
+    color: rgba(208, 216, 224, 0.092);
+}
+
+img{
+    width: 25%;
+    height: auto;
+}
+
+
+.Hero{
+    width: 600px;
+    height: 200px;
+    display: inline-block;
+}
+
+.set2{
+    font-size: 1rem;
+    text-decoration: justify ;
+    color: white;
+    border: none;
+    max-width: fit-content;
+    background-color: #000;
+    margin-left: 3rem;
+max-width: fit-content;
+flex-wrap: wrap;
+transition: .5s;
+border-radius: 5px;
+}   
+.set2:hover{
+    background-color: antiquewhite;
+    color: gray;
+}  
+      
+@media screen and (min-width:370px){
+    body{
+        background-color: rebeccapurple;
+        background-image: radial-gradient(whitesmoke,rebeccapurple);
+    }
+}
+   
+@media screen and (min-width:320px){
+    body{
+        background-color: antiquewhite;
+        background-image: radial-gradient(whitesmoke,antiquewhite);
+    }
+}
+      
+@media screen and (min-width:1440px){
+    body{
+        background-color: wheat;
+        background-image: radial-gradient(whitesmoke,wheat);
+    }
+}
+
+
+</style>
+  
+  <script src="javaScript.js"></script>
+</head>
+  <body>
+<fieldset class="center"> 
+  <nav>  
+<svg width="65" height="40" xmlns="http://www.w3.org/2000/svg">
+  <path d="M23.016 39.2c.317 0 .574-.093.77-.28.196-.187.294-.457.294-.812v-1.82c0-.448.033-.84.098-1.176.065-.336.145-.663.238-.98l5.09-18.122 4.822 18.57c.112.384.193.682.243.895l.023.099c.047.215.07.453.07.714v1.82c0 .355.098.625.294.812.196.187.453.28.77.28h10.696c.299 0 .55-.093.756-.28.205-.187.308-.457.308-.812v-1.82c0-.373.023-.705.07-.994.047-.29.135-.677.266-1.162L54.04 7.224c.299-1.25.765-2.254 1.4-3.01.635-.756 1.363-1.311 2.184-1.666l.672-.308c.336-.168.574-.331.714-.49.14-.159.21-.369.21-.63 0-.336-.117-.607-.35-.812C58.637.103 58.287 0 57.82 0h-8.904c-.467 0-.817.103-1.05.308-.233.205-.35.476-.35.812 0 .261.06.471.182.63.121.159.313.303.574.434l.616.224c1.12.41 1.871.999 2.254 1.764s.453 1.661.21 2.688l-5.535 23.486-6.477-25.81c-.133-.58-.17-1.018-.11-1.31l.026-.104c.093-.29.317-.49.672-.602l1.232-.336c.299-.112.518-.257.658-.434a.986.986 0 0 0 .21-.63c0-.355-.112-.63-.336-.826C41.468.098 41.122 0 40.656 0H24.78c-.448 0-.789.098-1.022.294-.233.196-.35.471-.35.826 0 .224.06.415.182.574.121.159.322.294.602.406l1.176.42c.261.093.462.243.602.448.14.205.294.607.462 1.204l1.751 6.742-5.553 19.475L16.128 4.48c-.147-.49-.194-.898-.14-1.223l.028-.135c.093-.345.327-.574.7-.686l1.456-.336c.504-.168.756-.504.756-1.008 0-.336-.112-.602-.336-.798C18.368.098 18.022 0 17.556 0H1.344C.896 0 .56.098.336.294.112.49 0 .756 0 1.092c0 .224.056.434.168.63.112.196.29.35.532.462l1.232.392c.355.13.625.308.812.532.187.224.345.579.476 1.064l7.84 30.408c.112.43.191.751.238.966.047.215.07.462.07.742v1.82c0 .355.103.625.308.812.205.187.467.28.784.28h10.556Zm34.804.7c1.195 0 2.263-.29 3.206-.868a6.338 6.338 0 0 0 2.24-2.338c.55-.98.826-2.04.826-3.178 0-1.157-.275-2.212-.826-3.164a6.325 6.325 0 0 0-2.24-2.282c-.943-.57-2.011-.854-3.206-.854-1.157 0-2.207.285-3.15.854a6.325 6.325 0 0 0-2.24 2.282c-.55.952-.826 2.007-.826 3.164 0 1.139.275 2.198.826 3.178.55.98 1.297 1.76 2.24 2.338.943.579 1.993.868 3.15.868Z" fill="#00001A"/></svg>
+ <a href=""><ul>Home</ul></a>
+ <a href=""><ul>New </ul></a>
+ <a href=""><ul>Popular </ul></a>
+ <a href=""><ul>Trending </ul></a>
+ <a href=""><ul>Categories </ul></a>
+  
+  
+  
+  
+  
+  
+</nav>
+ 
+    <main class="imgfield">              
+             <div>
+              <img class="Hero" src="assets/images/image-web-3-desktop.jpg" alt="image-web-3-desktop" width="600" height="200">
+              <section >
+                        <fieldset class="come">
+                           <p >
+                          <h2 class="atom"> The Bright <br> Future of Web 3.0? </h2>
+                         
+                         <div class="container">
+                           We dive into the next evolution of the web that <br> claims to put the power of the platforms back <br>into the hands of the people
+                           But is it really <br>fulfilling its promise? <br>
+                           
+                         </p>
+                         <span id="more"> 
+                          <a href="Rock Paper Scissors.html"><button >  READ MORE </button></a>
+                           
+                         </span>
+                         
+                        </fieldset>
+                      </section>
+               
+            </div>
+              <div>
+              <fieldset class="set2">
+                <h2 class="new">New</h2> 
+                <p class="H2">Hydrogen VS Electric Cars</p>
+                <h6>
+                Will hydrogen-fueled cars ever catch up <br> 
+                to EVs? </h6>
+                <hr>
+                <p class="H2">The Downsides of AI Artistry</p>
+                <h6> 
+                What are the possible adverse effects of <br>
+                 on-demand AI image generation?</h6>
+                <hr>
+                <p class="H2">Is VC Funding Drying Up?</p>
+                <h6>
+                Private funding by VC firms is down 60% <br>
+                YOY. We take a look at what that means</h5>
+              </fieldset>
+            </div>
+            </main>
+  
+
+
+
+<main class="columns">
+  <fieldset class="field">
+
+ <img class="antman" src="assets/images/image-retro-pcs.jpg" alt="retro image " height="120px">    
+    <span id="retro">
+      <strong class="h2">01</strong>
+      <br>
+    <strong class="h3">Reviving Retro PCs </strong>
+    <br>
+    <strong class="strong">
+      What happens when old PCs <br> are 
+      given modern upgrades?</strong>
+  </span>
+  
+  
+  </fieldset>
+
+
+<fieldset class="field">
+<img src="assets/images/image-top-laptops.jpg" alt="laptop image" height="120px">
+
+<span id="retro">
+   <strong class="h2">02</strong>
+   <br>
+  <strong class="h3">Top 10 Laptops of 2022</strong> 
+  <br>
+  <strong class="strong">
+    Our best picks for various <br> 
+     needs and budgets.</strong>
+  </span>
+  </fieldset> 
+
+
+  <fieldset class="field">
+
+      <img src="assets/images/image-gaming-growth.jpg" alt="Gaming image" height="120px">
+      <span id="retro">
+      <strong class="h2">03</strong>
+      <br>
+      <strong class="h3">The Growth of Gaming</strong> <br>
+     <strong class="strong"> How the pandemic has sparked <br>
+      fresh opportunities.</strong>
+  
+ </span>
+</fieldset>
+
+</section>
+  <div class="attribution">
+
+  </fieldset>  
+
+ </body>
+</html>

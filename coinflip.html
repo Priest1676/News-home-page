@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoinFlip</title>
+  <style>
+    body{
+      display: grid;
+      padding: 0;
+      margin: 0;
+      background-color: antiquewhite;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      
+      
+    }
+    fieldset{
+      background-color: white;
+      padding: 100px;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 6px 10px #3333;
+    }
+    button{
+      font-size: 25px;
+      height: 40px;
+      margin: 10px 10px;
+      font-weight: bold;
+      border: none;
+      background-color: black;
+      color: azure;
+      border-radius: 5px;
+      transition: .5s;
+      align-items: center;
+      justify-content: center;
+    }
+    button:active{
+      background-color: rgb(230, 230, 230);
+      color: blue;
+      font-size: 40px;
+    }
+    p{
+      margin:10px 10px;;
+      font-size: 40px;
+    }
+    .js-paragraph{
+      opacity: 1;
+      transition: calc(-50%);
+    }
+    .calculator{
+      font-size: 25px;
+      height: 40px;
+      font-weight: bold;
+      border: none;
+      background-color: orange;
+      color: azure;
+      border-radius: 5px;
+      transition: .5s;
+      margin-top: -30px;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <fieldset>
+  <p>Coin Flip</p>
+<button onclick="
+playGame('heads');
+">heads</button>
+
+<button onclick="
+playGame('tails');
+">tails</button>
+<p class="js-paragraph"></p>
+</fieldset>
+<p>Use our calculator for your calculations</p>
+<a href="calculator-modification.html">
+  <button class="calculator">Calculator</button>
+</a>
+ <script>
+
+let score = JSON.parse(localStorage.getItem('score')) ||
+      {
+      wins: 0,
+      losses: 0,
+      ties: 0
+    }
+  function playGame(playerMove){
+    
+  let randomNumber = Math.random();
+  let computerMove = '';
+
+    if(randomNumber > 0 && randomNumber < 0.5){
+  computerMove = 'heads';
+    }else if (randomNumber >= 0.5){
+      computerMove = 'tails';
+    }
+    let result ='';
+
+  if(playerMove === 'heads'){
+    if(computerMove === 'heads') {
+      result = 'You win';
+    }else if (computerMove === 'tails') {
+      result = ' You lose';
+    }
+  } else if (playerMove === 'tails') {
+    if(computerMove === 'heads') {
+      result = 'You lose';
+    }else if (computerMove === 'tails') {
+      result = ' You win';
+    }
+  }
+
+  if (result === 'You win') {
+    score.wins += 1;
+  }else if (result === 'You lose') {
+    score.losses += 1;
+  }
+
+  localStorage.setItem('score', JSON.stringify(score));
+/* 
+  alert(`you picked ${playerMove}, Computerr picked ${computerMove}, ${result} 
+  wins:${score.wins} losses:${score.losses}`);
+   */
+  const paragraph = document.querySelector('.js-paragraph').innerHTML= `
+  You:${playerMove} :computer: ${computerMove}, 
+   ${result} 
+  wins:${score.wins} losses:${score.losses};
+  `;
+  };
+/* 
+let result = randomNumber;
+const guess = 'heads' || 'tails'
+if(result < 0.5){
+  console.log(result);
+}else{
+  console.log(result);
+} */
+
+ </script> 
+</body>
+</html>
